@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container:hover .circle{
+            transform: translateX(200px);
+        }
+
+        .circle {
+            width:50px;
+            height: 50px;
+            border-radius:50%;
+        }
+
+        .uno{
+            background: red;
+            transition: transform 1.6s linear;
+            transition-delay: 0.5s;
+        }
+
+        .dos{
+            background: rgb(127, 219, 158);
+            transition: transform 1.4s ease;
+            transition-delay: 1s;
+        }
+
+        .tres{
+            background: blue;
+            transition: transform 3s ease-in;
+            transition-delay: 1.5s;
+        }
+
+        .cuatro{
+            background: pink;
+            transition: transform 1.5s linear;
+            transition-delay: 2.5s;
+        }
+
+        .cinco{
+            background:skyblue;
+            transition: transform 2s ease-in-out;
+            transition-delay: 1.5s;
+        }
+
+        .seis{
+            background: palevioletred;
+            transition: transform 3s cubic-bezier(.08,.7,.83,.2);
+            transition-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle uno"></div>
+        <div class="circle dos"></div>
+        <div class="circle tres"></div>
+        <div class="circle cuatro"></div>
+        <div class="circle cinco"></div>
+        <div class="circle seis"></div>
+    </div>
+</body>
+</html>
