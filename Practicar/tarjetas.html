@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 13px;
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        margin: 13px;
+        position: relative;
+        height: 200px;
+        width: 200px;
+        transform-style: preserve-3d;
+        transition: transform 3s ease-in-out;
+    }
+
+    .element {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 5%;
+    }
+
+    .front {
+        transform: rotateY(180deg);
+    }
+
+    .back {
+        background: black;
+        backface-visibility: hidden;
+    }
+
+    .show {
+        transform: rotateY(180deg) scale(1.2);
+        transition: transform 2s ease-in-out;
+    }
+</style>
+
+<body>
+    <section class="container-cards">
+        <div class="card">
+            <img class="element front" src="https://i.pinimg.com/564x/59/ef/13/59ef13e3538fabe350c1694cb911c426.jpg"
+                alt="">
+            <div class="element back"></div>
+        </div>
+        <div class="card">
+            <img class="element front" src="https://i.pinimg.com/236x/95/48/c2/9548c26a4d8139d1d451fd8b28bc90e7.jpg"
+                alt="">
+            <div class="element back"></div>
+        </div>
+        <div class="card">
+            <img class="element front" src="https://i.pinimg.com/236x/45/d0/95/45d095ee422766fab1241cb3e050b775.jpg"
+                alt="">
+            <div class="element back"></div>
+        </div>
+        <div class="card">
+            <img class="element front" src="https://i.pinimg.com/236x/95/48/c2/9548c26a4d8139d1d451fd8b28bc90e7.jpg"
+                alt="">
+            <div class="element back"></div>
+        </div>
+        <div class="card">
+            <img class="element front" src="https://i.pinimg.com/236x/95/48/c2/9548c26a4d8139d1d451fd8b28bc90e7.jpg"
+                alt="">
+            <div class="element back"></div>
+        </div>
+    </section>
+
+    <script>
+        const cards = document.getElementsByClassName('card')
+
+
+        const showFuntions = (index) => {
+            if (cards[index].classList.contains('show')) {
+                cards[index].classList.remove('show')
+            } else {
+                cards[index].classList.add('show')
+                setTimeout(() =>cards[index].classList.remove('show'),3000)
+            }
+        }
+
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].addEventListener('click', ()=>showFuntions(i))
+        }
+
+
+
+    </script>
+</body>
+
+</html>
